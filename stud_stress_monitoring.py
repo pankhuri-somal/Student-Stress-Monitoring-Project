@@ -30,7 +30,7 @@ st.image('https://i.postimg.cc/sDdnxK38/Screenshot-2025-08-26-222129.png')
 with open('stud_stress_monitoring.pkl', 'rb') as f:
     model = pickle.load(f)
 
-df = pd.read_csv("StressLevelDataset.csv")
+df = pd.read_csv("C:\Users\pankh\.cache\kagglehub\datasets\mdsultanulislamovi\student-stress-monitoring-datasets\versions\1.csv")
 
 # ------------------- Sidebar Inputs -------------------
 st.sidebar.header('🔍 Select Feature Values')
