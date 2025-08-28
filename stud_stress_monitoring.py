@@ -4,7 +4,7 @@ import numpy as np
 import pickle
 import time
 
-# ------------------- Page Title and Description -------------------
+
 st.set_page_config(page_title="Student Stress Monitor", layout="centered")
 st.header('🎓 Student Stress Monitoring Using Machine Learning')
 
@@ -14,25 +14,24 @@ To develop a machine learning-based model that analyzes student data to monitor,
 **Algorithms Used:**
 - Logistic Regression
 - Naive Bayes
-- Support Vector Machine (Linear)
+- Support Vector Machine 
 - K-Nearest Neighbors
 - Decision Tree
 - Random Forest
 - XGBoost
-- Artificial Neural Network (1 Hidden Layer, Keras)
+- Artificial Neural Network 
 '''
 st.markdown(description)
 
-# ------------------- Main Image -------------------
 st.image('https://i.postimg.cc/sDdnxK38/Screenshot-2025-08-26-222129.png')
 
-# ------------------- Load Model and Dataset -------------------
+
 with open('stud_stress_monitoring.pkl', 'rb') as f:
     model = pickle.load(f)
 
 df = pd.read_csv("StressLevelDataset.csv")
 
-# ------------------- Sidebar Inputs -------------------
+
 st.sidebar.header('🔍 Select Feature Values')
 st.sidebar.image('https://i.postimg.cc/wvDmGXny/Screenshot-2025-08-26-222159.png')
 
@@ -53,8 +52,6 @@ for col in df.columns:
 
     user_inputs[col] = val
 
-# ------------------- Make Prediction -------------------
-# Ensure column order matches training
 input_df = pd.DataFrame([user_inputs])
 
 st.write("📋 Input DataFrame used for prediction:")
@@ -62,7 +59,7 @@ st.dataframe(input_df)
 
 prediction = model.predict(input_df)[0]
 
-# ------------------- Simulated Loading -------------------
+
 progress_bar = st.progress(0)
 status_text = st.empty()
 loading_gif = st.empty()
@@ -77,7 +74,7 @@ for i in range(100):
 status_text.empty()
 loading_gif.empty()
 
-# ------------------- Display Prediction -------------------
+
 stress_labels = {
     0: 'No Stress',
     1: 'Mild Stress',
