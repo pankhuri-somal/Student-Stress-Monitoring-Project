@@ -7,6 +7,46 @@ import time
 # ------------------ Page Config ------------------
 st.set_page_config(page_title="Student Stress Monitor", layout="centered")
 
+# ------------------ Stress-Themed CSS ------------------
+st.markdown("""
+<style>
+/* App background */
+.stApp {
+    background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #f1f8e9;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #1b5e20;
+}
+
+/* Buttons */
+.stButton > button {
+    background-color: #2e7d32;   /* calm green */
+    color: white;
+    border-radius: 10px;
+    padding: 0.6em 1.4em;
+    font-size: 16px;
+    border: none;
+}
+
+.stButton > button:hover {
+    background-color: #1b5e20;   /* darker green */
+    color: white;
+}
+
+/* Progress bar */
+.stProgress > div > div {
+    background-color: #66bb6a;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # ------------------ Session State ------------------
 if "page" not in st.session_state:
     st.session_state.page = "home"
@@ -56,12 +96,16 @@ elif st.session_state.page == "predict":
     st.header("🎓 Student Stress Monitoring Using Machine Learning")
 
     description = '''
-    About the Project
+    **About the Project**
 
-The Student Stress Monitoring System is developed as a data science project with the goal of monitoring, analyzing, and predicting stress levels in students. The system collects academic, behavioral, and lifestyle-related inputs and applies machine learning algorithms to evaluate stress conditions.
+    The Student Stress Monitoring System is developed as a data science project
+    with the goal of monitoring, analyzing, and predicting stress levels in students.
+    The system collects academic, behavioral, and lifestyle-related inputs and
+    applies machine learning algorithms to evaluate stress conditions.
 
-This project highlights the importance of mental health awareness and demonstrates how data science can be effectively used to support students in managing stress and improving their academic outcomes.
-
+    This project highlights the importance of mental health awareness and
+    demonstrates how data science can be effectively used to support students
+    in managing stress and improving their academic outcomes.
     '''
     st.markdown(description)
 
