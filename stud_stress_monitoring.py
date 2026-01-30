@@ -93,7 +93,7 @@ if st.session_state.page == "home":
 # ------------------ PREDICTION PAGE ------------------
 elif st.session_state.page == "predict":
 
-    st.header("🎓 Student Stress Monitoring Using Machine Learning")
+    st.header("🎓 Student Stress Monitoring ")
 
     description = '''
     **About the Project**
